@@ -1,0 +1,23 @@
+server:
+  port: 8080
+logging:
+  level:
+    com.xyy.socket.dao: debug  #dao的路径
+spring:
+  datasource:
+    dynamic:
+      primary: master
+      datasource:
+        master:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://localhost:3306/alltesting?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=UTF-8
+          username: root
+          password: root
+        slave_1:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://123.57.39.161:3306/alltesting?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=UTF-8
+          username: root
+          password: root
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
